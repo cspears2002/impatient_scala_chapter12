@@ -2,9 +2,9 @@
 
 import scala.collection.mutable.ArrayBuffer
 
-def values(f: (Int) => Int, low: Int, high: Int): ArrayBuffer[(Int, Int)] = {
+def values(f: Int => Int, low: Int, high: Int): ArrayBuffer[(Int, Int)] = {
   val arrayBuff = ArrayBuffer[(Int, Int)]()
-  for (i <- low until high) {
+  for (i <- low until high + 1) {
     arrayBuff += ((i, f(i)))
   }
   arrayBuff
