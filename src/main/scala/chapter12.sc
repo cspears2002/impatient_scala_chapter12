@@ -16,3 +16,14 @@ val biggestInt: Int = intArray.foldLeft(0) { (x, y) =>
   if x > y then x else y
 }
 
+// Exercise 3
+def computeFactorial(startingInt: Int): Int = {
+  if startingInt == 0 then
+    1
+  else {
+    val i = startingInt - 1
+    (i to 1).foldLeft(startingInt)(_ * _)
+  }
+}
+computeFactorial(0)
+computeFactorial(5)
