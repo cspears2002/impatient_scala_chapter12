@@ -22,8 +22,10 @@ def computeFactorial(startingInt: Int): Int = {
     1
   else {
     val i = startingInt - 1
-    (i to 1).foldLeft(startingInt)(_ * _)
+    val numbers = (1 to i).toArray.reverse
+    numbers.foldLeft(startingInt)(_ * _)
   }
 }
 computeFactorial(0)
 computeFactorial(5)
+
