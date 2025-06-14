@@ -1,5 +1,4 @@
 // Exercise 1
-
 import scala.collection.mutable.ArrayBuffer
 
 def values(f: Int => Int, low: Int, high: Int): ArrayBuffer[(Int, Int)] = {
@@ -11,4 +10,9 @@ def values(f: Int => Int, low: Int, high: Int): ArrayBuffer[(Int, Int)] = {
 }
 values(x => x * x, -5, 5)
 
+// Exercise 2
+val intArray = Array(5, 6, 10, 9, 1)
+val biggestInt: Int = intArray.foldLeft(0) { (x, y) =>
+  if x > y then x else y
+}
 
