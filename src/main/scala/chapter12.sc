@@ -26,6 +26,15 @@ assert(computeFactorial(5).contains(120))
 // Exercise 5
 def myFunc(x: Int): Int = 10 * x - x * x
 val mySeq: Seq[Int] = 1 to 10
-def largest(fun: Int => Int, inputs: Seq[Int]): Int = 
+mySeq.map(myFunc)
+def largest(fun: Int => Int, inputs: Seq[Int]): Int =
   inputs.map(fun).max
 largest(myFunc, mySeq)
+
+// Exercise 6
+def idxForLargestVal(fun: Int => Int, inputs: Seq[Int]): Int = {
+  val newSeq = inputs.map(fun)
+  val maxVal = newSeq.max
+  newSeq.indexOf(maxVal) + 1
+}
+idxForLargestVal(myFunc, mySeq)
