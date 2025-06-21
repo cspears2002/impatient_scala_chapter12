@@ -23,3 +23,9 @@ assert(computeFactorial(-1).isEmpty)
 assert(computeFactorial(0).contains(1))
 assert(computeFactorial(5).contains(120))
 
+// Exercise 5
+def myFunc(x: Int): Int = 10 * x - x * x
+val mySeq: Seq[Int] = 1 to 10
+def largest(fun: Int => Int, inputs: Seq[Int]): Int = 
+  inputs.map(fun).max
+largest(myFunc, mySeq)
