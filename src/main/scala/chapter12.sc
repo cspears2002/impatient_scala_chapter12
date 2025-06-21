@@ -38,3 +38,14 @@ def idxForLargestVal(fun: Int => Int, inputs: Seq[Int]): Int = {
   newSeq.indexOf(maxVal) + 1
 }
 idxForLargestVal(myFunc, mySeq)
+
+// Exercise 7
+import scala.math.sqrt
+
+def f(x: Double) = if x != 1 then Some(1 / (x - 1)) else None
+def g(x: Double) = if x >= 0 then Some(sqrt(x)) else None
+def compose(func1: Double => Option[Double],
+            func2: Double => Option[Double]): Double => Option[Double] = {
+  func2.compose(func1)
+}
+
