@@ -54,10 +54,16 @@ h(1)
 h(0)
 
 // Exercise 8
-def tuplingFunc(f: (Int, Int) => Int): ((Int, Int)) => Int =
-  (x: Int, y: Int) => f(x, y)
+def composeIntFunc(f: Int => Int, g: Int => Int): Int => Int =
+  x => f(g(x))
+val double: Int => Int = _ * 2
+val triple: Int => Int = _ * 3
+val doubleTriple = composeIntFunc(triple, double)
+doubleTriple(2)
 
-tuplingFunc(multiplyExact)((6, 7))
+def tupledIntFunc(f: (Int, Int) => Int): ((Int, Int)) => Int =
+  (x: Int, y: Int) => f(x, y)
+tupledIntFunc(multiplyExact)((6, 7))
 
 
 
