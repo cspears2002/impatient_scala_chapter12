@@ -44,11 +44,14 @@ import scala.math.sqrt
 
 def f(x: Double) = if x != 1 then Some(1 / (x - 1)) else None
 def g(x: Double) = if x >= 0 then Some(sqrt(x)) else None
-def composeFunc(x: Double): Option[Double] =
-  f(x).flatMap(y => g(y))
-composeFunc(2)
-composeFunc(1)
-composeFunc(0)
+def composeFunc(f: Double => Option[Double],
+                g: Double => Option[Double]): Double => Option[Double] =
+  x => f(x).flatMap(g)
+val h = composeFunc(f, g)
+h(2)
+h(1)
+h(0)
+
 
 
 
