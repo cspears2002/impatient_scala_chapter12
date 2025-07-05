@@ -1,5 +1,6 @@
 // Exercise 1
 import scala.collection.mutable.ArrayBuffer
+import scala.math.multiplyExact
 
 def values(f: Int => Int, low: Int, high: Int): ArrayBuffer[(Int, Int)] = {
   val arrayBuff = ArrayBuffer[(Int, Int)]()
@@ -52,6 +53,11 @@ h(2)
 h(1)
 h(0)
 
+// Exercise 8
+def tuplingFunc(f: (Int, Int) => Int): ((Int, Int)) => Int =
+  (x: Int, y: Int) => f(x, y)
+
+tuplingFunc(multiplyExact)((6, 7))
 
 
 
