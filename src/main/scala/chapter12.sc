@@ -65,13 +65,14 @@ def tupledIntFunc(f: (Int, Int) => Int): ((Int, Int)) => Int =
   (x: Int, y: Int) => f(x, y)
 tupledIntFunc(multiplyExact)((6, 7))
 
-val intMax: (Int, Int) => Int = scala.math.max
-
 def curriedIntFunc(f: (Int, Int) => Int): Int => Int => Int =
   x => (y: Int) => f(x,y)
 
+val intMax: (Int, Int) => Int = scala.math.max
 val maxZero = curriedIntFunc(intMax)
 maxZero(0)(1)
 maxZero(0)(-1)
+
+
 
 
