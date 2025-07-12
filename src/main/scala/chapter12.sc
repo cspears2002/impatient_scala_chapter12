@@ -73,6 +73,11 @@ val maxZero = curriedIntFunc(intMax)
 maxZero(0)(1)
 maxZero(0)(-1)
 
+//Exercise 10
+val a = Array("Mary", "had", "a", "little", "lamb")
+val b = Array(4, 3, 1, 6, 4)
+a.corresponds(b)(_.length == _)
+
 
 
 
