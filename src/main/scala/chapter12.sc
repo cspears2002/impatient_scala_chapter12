@@ -73,11 +73,19 @@ val maxZero = curriedIntFunc(intMax)
 maxZero(0)(1)
 maxZero(0)(-1)
 
-//Exercise 10
+// Exercise 10
 val a = Array("Mary", "had", "a", "little", "lamb")
 val b = Array(4, 3, 1, 6, 4)
 a.corresponds(b)(_.length == _)
 
+// Exercise 11
+def correspondsArrays(arrayA: Array[String],
+                      arrayB: Array[Int],
+                      p: (String, Int) => Boolean): Boolean = {
+  arrayA.zip(arrayB).map(p(_,_)).forall(_ == true)
+}
+val lengthFunc: (String, Int) => Boolean = (x: String, y: Int) => x.length == y
+correspondsArrays(a, b, lengthFunc)
 
 
 
