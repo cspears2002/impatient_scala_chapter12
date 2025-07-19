@@ -87,5 +87,13 @@ def correspondsArrays(arrayA: Array[String],
 val lengthFunc: (String, Int) => Boolean = (x: String, y: Int) => x.length == y
 correspondsArrays(a, b, lengthFunc)
 
+// Exercise 12
+def unless(condition: => Boolean)(block: => Unit): Unit =
+  if !condition then
+    block
 
+val x = 2
+unless (x == 1) {
+  println(x)
+}
 
